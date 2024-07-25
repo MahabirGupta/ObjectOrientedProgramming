@@ -7,6 +7,7 @@ public class MealOrder {
     private Burger selectionburger;
     private Drink drink;
     private SideItem sideItem;
+    private DeluxeBurger deluxeBurger;
 
     public static void main(String[] args) {
 
@@ -20,7 +21,7 @@ public class MealOrder {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Bill Restaurant");
         while (true) {
-            System.out.print("Please select the following opions: \n1 for Regular Meal \n2 for Other Meals and \n3 to exit: ");
+            System.out.print("Please select the following opions: \n1 for Regular Meal \n2 for Other Meals \n3 for Deluxe Burger Meal and \n4 to exit: ");
             System.out.print("\nEnter option: ");
             int chooseSelection = scanner.nextInt();
             switch (chooseSelection) {
@@ -38,6 +39,11 @@ public class MealOrder {
                     burgerSelectionMenu();
                     break;
                 case 3:
+//                    deluxeBurger = new DeluxeBurger("Deluxe Burger", "Coke","French Fries","Chilli Sauce");
+                    deluxeBurger = new DeluxeBurger();
+                    deluxeBurger.deluxeBurgerMeal();
+                    break;
+                case 4:
                     System.out.println("Thank you for visiting. Goodbye!");
                     break;
                 default:
@@ -184,7 +190,7 @@ public class MealOrder {
 
     public double selectDrinkSize(String drinkType) {
         Scanner scanner = new Scanner(System.in);
-//        Drink drink = new Drink();
+//        Drink drink = new Drink(); already declared as field
         while (true) {
             System.out.println("Select size of drink: ");
             System.out.println("1 -> Small -> $2.65");
